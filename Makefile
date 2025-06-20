@@ -39,7 +39,6 @@ test-e2e:
 	docker cp e2e-tests:/results ./  || true
 	docker rm --force apiserver  || true
 	docker rm --force calc-web || true
-	docker network rm calc-test-e2e || true
 
 run-web:
 	docker run --rm --volume `pwd`/web:/usr/share/nginx/html  --volume `pwd`/web/constants.local.js:/usr/share/nginx/html/constants.js --name calc-web -p 80:80 nginx
